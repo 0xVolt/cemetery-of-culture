@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"glut.h": "c",
+			"stdio.h": "c"
+		}
+	}
+}

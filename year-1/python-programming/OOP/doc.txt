@@ -1,0 +1,59 @@
+O O P
+
+    * Objects
+        * Everything in python is an object
+
+        * So all the programming so far, has been Object Based Programming
+
+            * i.e. using code containing objects made by someone else
+
+            * no need to re-invent the wheel 
+
+            * promotes using libraries created by someone else rather than creating code from scratch
+
+            * using GitHub and other code --> (Owned by Microsoft)
+
+        * Key concepts on OOP
+            * Encapsulation
+            * Inheritance
+            * Polymorphism
+
+            * Real world models call functions through objects
+
+        * Objects are real world entities having properties (behaviour) and functionalities
+
+        * Corressponding to every object, the blueprint of the object is created -> the Class
+
+    * Classes
+        * Polymorphism
+            * Poly - many, morphism - forms
+            
+            * Different instances of the same function. Different varient of the function is called by the compiler automatically
+
+        * Encapsulation
+            * Data hiding
+                * Hiding implementation details & only showing necessary features to the user
+
+            * All these features are called 'Attributes' or properties of the Class.
+
+        * Inheritance 
+            * A class can have properties and functions from another class.
+
+            * Child class (derived class) derives properties from the parent class (base class)
+
+            * 
+
+        * Classes are blueprints of actual objects and objects are created of type class.
+
+        * Class def:
+            Attributes
+            Methods
+            Docstring
+            Constructor
+            Argument 'self'
+                First arg of every method should be self, to reference the object itself
+        
+        * Objects call Attributes and Methods of a class using . (dot) opr
+
+        * data members -> Attributes
+          member functions -> Methods

@@ -1,0 +1,13 @@
+The most importatn property of a stack is LIFO
+
+This occurs because there is only one position of insertion and deletion
+in the stack. We keep track of this position using top
+
+i.e. element that was inserted last gets deleted first --> LIFO
+
+With respect to linked-lists
+    We use only two functions 
+        insertBeg() --> push() &
+        deleteBeg() --> pop()
+    Top becomes Head --> variable that points to the last inserted element
+    We can use a temp to traverse

@@ -1,0 +1,46 @@
+Exceptions:
+
+  * Handling is done by execpt: cluase and code is done by try: cluase
+
+  * When using another library, when exceptions arent written, a problem may go unsolved and wont be able to be user friendly
+
+  * Good practice to use when using other libraries
+
+  * Lots of in-built exceptions
+    Exception --> parent exception, all are derived from this one
+    All the exceptions follow a hierarchy
+
+  * These exceptions are raised whenever there is a    block in code that may cause a termination -> when user passes data -> division -> etc.
+
+  * When exceptions aren't handled, stack unwinding will take place to identify which function was called last to identify which function the error came from
+
+  * Exception handling is when you catch the exception
+    Multiple exceptions may be handled at once
+
+
+Serialization:
+
+  * When you download data from twitter, the data downloads as .json files
+
+  * Python uses pickled files
+
+  * Whenever we want to save data variables, we use serialization
+
+  * It converts objects -> almost everything in py, lists, dicts, ints, floats, are all objects -> to something you can transfer from computer to computer
+
+  * dump & load
+    * dump() -> convert object to something to transfer, we dump the objects into a file
+
+    * get original data from serialized file, we use load()
+
+  * serialize dict to file 'f' -> we dump() f to transfer and then we load() f to get back the dict
+
+  * .json format resembles python dictionaries -> nothing but key-value pairs
+
+  * companies often have propriatary serialization techniques since if you know how the data has been serialized, you can figure out what the data is
+
+  * but pickle is a format provided by python -> used in legacy code -> security issues -> good for personal use
+    
+    * AS PER PY DOC => pickle files can be hacked -> raw pickle files over the network cannot be trusted -> can run arbitrary py scripts when loaded -> can be injected with malicious code
+    
+    * Your own pickle writing and reading is absolutely safe -> DONT USE PICKLE TO TRANSFER DATA VARIABLES
