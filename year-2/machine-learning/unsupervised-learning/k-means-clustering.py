@@ -1,4 +1,7 @@
 from sklearn.datasets import make_classification
+from random import randint
+import random
+
 
 XSampleNum = 100
 Classes = 2
@@ -33,21 +36,18 @@ uniqueLabels = set(labels)
 
 # %%
 
+choiceColors = [random.choice(randomColours) for i in range(nClusters)]
+colors = []
+
 for i in range(len(Data)):
     if labels[i] == 0:
-        colors.append(random.choice(randomColours))
+        colors.append(choiceColors[0])
     elif labels[i] == 1:
-        c1 = random.choice(colorSet)
-        if c1 not in colorSet:
-            colors.append(c1)
+        colors.append(choiceColors[1])
     elif labels[i] == 2:
-        c2 = random.choice(colorSet)
-        if c2 not in colorSet:
-            colors.append(c2)
+        colors.append(choiceColors[2])
     else:
-        c3 = random.choice(colorSet)
-        if c3 not in colorSet:
-            colors.append(c3)
+        colors.append(choiceColors[3])
 
 #%%
 import matplotlib.pyplot as plt

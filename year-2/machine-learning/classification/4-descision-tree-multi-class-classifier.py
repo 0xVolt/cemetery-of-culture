@@ -18,7 +18,7 @@ from sklearn import tree
 # %%
 
 # Creating the classification dataset
-numberSamples = 10
+numberSamples = 100
 testSize = 0.3
 testSampleSize = int(testSize * numberSamples)
 trainSampleSize = int((1 - testSize) * numberSamples)

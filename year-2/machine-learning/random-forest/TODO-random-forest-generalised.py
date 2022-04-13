@@ -77,7 +77,7 @@ data = {
 # Creating a dataframe using pandas with the columns populated in the above cell
 table = pandas.DataFrame(data)
 
-print(table)
+print('Displaying the dynamically generated dataset:\n\n', table)
 
 # %%
 
@@ -113,6 +113,8 @@ model.fit(X_train,t_train)
 
 # The non-numerical equivalent of the new instance [0, 1, 1, 1] given is [‘g9’, ‘Y’, ‘==’, ‘G’]
 
+print("\nResult according to the Random Forest Classifier:")
+
 if model.predict([[0,1,1,1]])==1:
     print("Got JOB")
 else:
@@ -124,6 +126,8 @@ from sklearn.ensemble import AdaBoostClassifier
 
 ada = AdaBoostClassifier()
 ada = ada.fit(X_train,t_train)
+
+print("\nResult according to the AdaBoost Classifier:")
 
 if model.predict([[0,1,1,0]])==1:
     print("Got JOB")

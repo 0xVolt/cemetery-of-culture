@@ -4,7 +4,7 @@ Created on Tue Mar  8 13:21:23 2022
 
 @author: Volt
 
-Implementation of a multi-class decision tree classifier in python using sklearn and changing all possible parameters with 
+Implementation through experimentation, of a multi-class decision tree classifier in python using sklearn
 """
 
 # %%
@@ -18,7 +18,7 @@ from sklearn import tree
 # %%
 
 # Creating the classification dataset
-numberSamples = 10
+numberSamples = 100
 testSize = 0.3
 testSampleSize = int(testSize * numberSamples)
 trainSampleSize = int((1 - testSize) * numberSamples)
