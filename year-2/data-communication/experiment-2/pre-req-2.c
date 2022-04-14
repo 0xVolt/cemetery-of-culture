@@ -1,7 +1,7 @@
 // Code by Desh Iyer
 
 // PROBLEM STATEMENT
-// FInd the element inside the array using pointers
+// Find the element inside the array using pointers
 
 // Include Libraries
 #include <stdlib.h>
