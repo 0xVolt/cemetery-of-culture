@@ -1,9 +1,6 @@
-// Code by Desh Iyer
+// Code by Ananya Aditi Singh
+// SAP Id: 500083972
 
-// PROBLEM STATEMENT
-// Draw a line using the bresenhams line drawing algorithm
-
-// CODE
 // Include libraries
 #include <GL/gl.h>
 #include <GL/glut.h>

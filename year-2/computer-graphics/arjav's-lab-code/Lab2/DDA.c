@@ -1,3 +1,6 @@
+// Code by Ananya Aditi Singh
+// SAP Id: 500083972
+
 #include <stdio.h>
 #include <GL/glut.h>
 void init()
@@ -5,7 +8,6 @@ void init()
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(640, 480);
     glutInitWindowPosition(100, 200);
-    glutCreateWindow("DDA Arjav Jain 500083556");
 
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);

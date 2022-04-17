@@ -5,7 +5,6 @@ void init()
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(640, 480);
     glutInitWindowPosition(100, 200);
-    glutCreateWindow("Bresenham Arjav Jain 500083556");
 
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1.0, 1.0, 1.0, 1.0);
