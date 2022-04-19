@@ -1,3 +1,6 @@
+// Code by Ananya Aditi Singh
+// SAP Id: 500083972
+
 #include <stdio.h>
 #include <GL/glut.h>
 int x, y;
@@ -54,7 +57,6 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     glutInitWindowPosition(200, 200);
-    glutCreateWindow("Boundary Fill Arjav Jain 500083556");
     glutDisplayFunc(display);
     init();
     glutMainLoop();

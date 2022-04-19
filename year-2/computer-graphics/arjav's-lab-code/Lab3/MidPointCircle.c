@@ -9,7 +9,6 @@ void init()
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(500, 500);
     glutInitWindowPosition(200, 100);
-    glutCreateWindow("Midpoint Circle Arjav Jain 500083556");
     glClearColor(1.0, 1.0, 1.0, 1.0);
     gluOrtho2D(-20, 20, -20, 20);
 }

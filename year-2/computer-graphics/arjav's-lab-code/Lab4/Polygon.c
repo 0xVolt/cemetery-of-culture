@@ -1,3 +1,6 @@
+// Code by Ananya Aditi Singh
+// SAP Id: 500083972
+
 #include <stdio.h>
 #include <GL/glut.h>
 #include <math.h>

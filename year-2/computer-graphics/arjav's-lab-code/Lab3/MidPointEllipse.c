@@ -24,7 +24,7 @@ void ellipseMidPoint()
     //int rx = 200;
     //int ry = 200;
 
-    //plotting for 1st region of 1st quardant and the slope will be < -1
+    //plotting for 1st region of 1st quadrant and the slope will be < -1
     //----------------------Region-1------------------------//
     float x = 0;
     float y = ry; //(0,ry) ---
@@ -54,7 +54,7 @@ void ellipseMidPoint()
             p1 = p1 + dx - dy + (ry * ry);
         }
     }
-    //ploting for 2nd region of 1st quardant and the slope will be > -1
+    //ploting for 2nd region of 1st quadrant and the slope will be > -1
     //----------------------Region-2------------------------//
     float p2 = (ry * ry) * (x + 0.5) * (x + 0.5) + (rx * rx) * (y - 1) * (y - 1) - (rx * rx) * (ry * ry);
 
@@ -113,7 +113,6 @@ int main(int argc, char **argv)
     glutInitWindowSize(640, 480);   
     glutInitWindowPosition(10, 10);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutCreateWindow("Midpoint Ellipse Arjav Jain 500083556");
     myinit();
     glutDisplayFunc(display); // set the gl display callback function
     glutMainLoop();           // enter the GL event loop
