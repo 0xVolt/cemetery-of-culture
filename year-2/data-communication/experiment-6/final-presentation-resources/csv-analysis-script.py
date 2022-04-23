@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Import data generated as a .csv file into pandas dataframe
-data = pd.read_csv(r'C:\Users\deshi\Code\imagine-chetas-coding\episode-II\act-II\data-communication\pure aloha experiments\experiment-6\final-presentation-resources\out.csv')
+data = pd.read_csv(
+    r'C:\Users\deshi\Code\cemetery-of-culture\year-2\data-communication\experiment-6\final-presentation-resources\out.csv'
+)
 
 # Create a dataframe with the imported data
 df = pd.DataFrame(data, columns= ['Frame (#)','Attempts (k)', 'Total Time Taken (seconds)', 'Backoff Time (seconds)'])

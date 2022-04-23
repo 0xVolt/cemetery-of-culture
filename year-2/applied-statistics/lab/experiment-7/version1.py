@@ -16,7 +16,7 @@ import numpy as np
 from scipy.stats import pearsonr
 
 # Read data from csv file given
-df = pd.read_csv(r'C:\Users\Volt\Code\B.Tech-CSE-Y2\applied-statistics\lab\experiment-7\phpB0xrNj.csv')
+df = pd.read_csv(r'C:\Users\deshi\Code\cemetery-of-culture\year-2\applied-statistics\lab\experiment-7\phpB0xrNj.csv')
 
 # Print the dataset
 print("\nGiven Data Set")

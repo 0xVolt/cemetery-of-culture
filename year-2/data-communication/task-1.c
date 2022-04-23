@@ -37,10 +37,12 @@ int main() {
     scanf("%d", &len);
 
     // Input first string
+    fflush(stdin);
     printf("Enter the first binary string: ");
     scanf("%s", string1);
 
     // Input second string
+    fflush(stdin);
     printf("Enter the second binary string: ");
     scanf("%s", string2);
 

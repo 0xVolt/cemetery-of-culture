@@ -97,7 +97,7 @@ int main() {
         }
     }
 
-    printf("\nTotal Transmission Time: %d seconds", sum);
+    printf("\nTotal Transmission Time: %f seconds", sum);
 }
 
 int arrayToNum(int arr[],int n){
