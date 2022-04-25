@@ -11,8 +11,8 @@ To make the most of this repository, keep in mind the aforementioned objective o
 
 To that end, the ideal method to use this repository is to contribute code to it on a daily basis by issuing pull requests from each forked repository. This will assist us in adhering to a collaborative file structure and, in the end, will provide us with the skills required to objectively take notes and/or critique a peer's code.
 
-### Note to the contributers
-**Though everyone is a contributer, to maintain a uniform quality and file structure among the various sub-directories we have in this repo, please wait for the PRs to be accepted only by @0xVolt.**
+### Note to the contributors
+**Though everyone is a contributor, to maintain a uniform quality and file structure among the various sub-directories we have in this repo, please wait for the PRs to be accepted only by @0xVolt.**
 
 ----------
 
@@ -42,19 +42,19 @@ Updating the forked repo is just like updating any other repo on GitHub using Gi
         - `git commit` tracks those files in the staging area as 'files to be committed' to the repo. The argument it takes is `-m` - which stands for message - and then the message that gives another collaborator information on what the files committed do.
         - Its important to note that you cannot commit without a message. Its just best practice to give meaningful messages in your commits.
     3. `git push`
-        - This pushes all the files which were tracked as commited files in the previous step and is the final step to push your files to GitHub for the world (or collaborators to see).
+        - This pushes all the files which were tracked as committed files in the previous step and is the final step to push your files to GitHub for the world (or collaborators to see).
 
 - After you're satisfied with all the changes you've made to your forked repo, you then need to update the main repo from which you forked your repo.
     - You do this by creating a pull request (PR for short).
     - To do this, navigate to the GitHub page of the main repo and select the pull requests tab.
     - Then create a new pull request and enter a meaningful message like we did for commits.
-    - After that, just sit tight and wait for a moderator or the repo owner to accept your PR and merge your code with the main repos or a comment from the mod/owner explaining why they didnt approve your PR.
+    - After that, just sit tight and wait for a moderator or the repo owner to accept your PR and merge your code with the main repos or a comment from the mod/owner explaining why they didn't approve your PR.
 
 ###### Note: If there are any errors in creating a pull request, read the next para to sync changes in the main repo with your forked one.
 
 ### Syncing your forked repo
 ##### Its important to note that before you start working on your forked repo, you want to make sure that your forked repo is up-to-date and is in sync with the main repo. 
-This is so that you don't step on any toes when you make your changes or you dont make changes and make a PR to find that someone beat you to the punch. You do this by executing the following commands in your Git bash.
+This is so that you don't step on any toes when you make your changes or you don't make changes and make a PR to find that someone beat you to the punch. You do this by executing the following commands in your Git bash.
 
 ###### Pre-requisite step
 - `git remote add upstream <parent_github_repo_link>`
