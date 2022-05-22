@@ -16,9 +16,9 @@ void display()
 	// Triangle
 	glColor3f(0, 1, 0);
 	glBegin(GL_TRIANGLES);
-        glVertex2f(-450, 450);
-        glVertex2f(-400, 300);
-        glVertex2f(-500, 300);
+	glVertex2f(-450, 450);
+	glVertex2f(-400, 300);
+	glVertex2f(-500, 300);
 	glEnd();
 
 	glColor3f(1, 1, 1);
@@ -29,8 +29,8 @@ void display()
 	// LINE
 	glColor3f(0, 1, 0);
 	glBegin(GL_LINES);
-        glVertex2f(-350, 300);
-        glVertex2f(-300, 450);
+	glVertex2f(-350, 300);
+	glVertex2f(-300, 450);
 	glEnd();
 
 	glColor3f(1, 1, 1);
@@ -38,22 +38,22 @@ void display()
 	const unsigned char *b = reinterpret_cast<const unsigned char *>("Bharat\'s Line");
 	glutBitmapString(GLUT_BITMAP_HELVETICA_12, b);
 
-    // Hexagon
-	glColor3f(0,1,0);
+	// Hexagon
+	glColor3f(0, 1, 0);
 	glBegin(GL_POLYGON);
-        glVertex2f(-0.3,0.8);
-        glVertex2f(-0.4,0.6);
-        glVertex2f(-0.3,0.4);
-        glVertex2f(0.2,0.8);
-        glVertex2f(0.3,0.6);
-        glVertex2f(0.2,0.4);
-        glVertex2f(-0.2,0.4);
-        glVertex2f(-0.3,0.4);
+	glVertex2f(-0.3, 0.8);
+	glVertex2f(-0.4, 0.6);
+	glVertex2f(-0.3, 0.4);
+	glVertex2f(0.2, 0.8);
+	glVertex2f(0.3, 0.6);
+	glVertex2f(0.2, 0.4);
+	glVertex2f(-0.2, 0.4);
+	glVertex2f(-0.3, 0.4);
 	glEnd();
 
 	// Hexagon
-	glColor3f(1,1,1);
-	glRasterPos2f(-0.2,0.0);
+	glColor3f(1, 1, 1);
+	glRasterPos2f(-0.2, 0.0);
 	glRasterPos2f(-350, 270);
 	const unsigned char *c = reinterpret_cast<const unsigned char *>("Bharat\'s Hexagon");
 	glutBitmapString(GLUT_BITMAP_HELVETICA_12, c);

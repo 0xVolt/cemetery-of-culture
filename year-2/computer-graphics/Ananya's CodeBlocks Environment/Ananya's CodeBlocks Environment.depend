@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1650859610 source:c:\users\deshi\code\cemetery-of-culture\year-2\computer-graphics\ananya's codeblocks environment\main.cpp
+1651306309 source:c:\users\deshi\code\cemetery-of-culture\year-2\computer-graphics\ananya's codeblocks environment\main.cpp
 	<GL/glut.h>
+	<GL/freeglut.h>
 	<stdio.h>
-	<math.h>
 
 1426329928 c:\program files\codeblocks\mingw\include\gl\glut.h
 	"freeglut_std.h"
@@ -22,4 +22,11 @@
 	<windows.h>
 	<limits.h>
 	<sstream>
+
+1426329928 c:\program files\codeblocks\mingw\include\gl\freeglut.h
+	"freeglut_std.h"
+	"freeglut_ext.h"
+
+1426329928 c:\program files\codeblocks\mingw\include\gl\freeglut_ext.h
+	<stdarg.h>
 
