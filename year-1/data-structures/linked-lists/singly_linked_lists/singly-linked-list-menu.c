@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 // typedef can be used to make code easier to understand
-struct node {
+struct node
+{
     int data;
     struct node *next;
 };
@@ -18,20 +19,23 @@ void insertEnd();
 void deleteBeg();
 void deleteEnd();
 
-int main() {
+int main()
+{
     createList();
-    
+
     menu();
 
     return 0;
 }
 
-void menu() {
+void menu()
+{
     int choice;
-    
-    for (;;) {
+
+    for (;;)
+    {
         system("cls");
-        
+
         printf("--------------M E N U--------------\n\n");
         printf("1. Display List\n");
         printf("2. INSERT at Beginning\n");
@@ -43,148 +47,160 @@ void menu() {
         printf("Enter your choice (1-6): ");
         scanf("%d", &choice);
 
-        switch(choice) {
-            case 1:
-                displayList();
-                break;
-            
-            case 2:
-                insertBeg();
-                break;
+        switch (choice)
+        {
+        case 1:
+            displayList();
+            break;
 
-            case 3:
-                insertEnd();
-                break;
+        case 2:
+            insertBeg();
+            break;
 
-            case 4:
-                deleteBeg();
-                break;
+        case 3:
+            insertEnd();
+            break;
 
-            case 5:
-                deleteEnd();
-                break;
+        case 4:
+            deleteBeg();
+            break;
 
-            case 6:
-                exit(0);
+        case 5:
+            deleteEnd();
+            break;
 
-            default:
-                printf("Invalid response!\n\n");
+        case 6:
+            exit(0);
+
+        default:
+            printf("Invalid response!\n\n");
         }
         printf("\n");
         system("pause");
     }
-    
 }
 
-void createList() {
+void createList()
+{
     struct node *currNode, *tempNode;
     int n;
     printf("\nEnter the number of nodes to insert\n");
     scanf("%d", &n);
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        currNode=(struct node*)malloc(sizeof(struct node));
-        printf("Enter the data for node %d: ", (i+1));
+        currNode = (struct node *)malloc(sizeof(struct node));
+        printf("Enter the data for node %d: ", (i + 1));
         scanf("%d", &currNode->data);
-        if(i==0)
+        if (i == 0)
         {
-            headNode=tempNode=currNode;
+            headNode = tempNode = currNode;
         }
         else
         {
             tempNode->next = currNode;
-            tempNode=currNode;
+            tempNode = currNode;
         }
-        tempNode->next=NULL;
+        tempNode->next = NULL;
     }
 }
 
-void displayList() {
+void displayList()
+{
     struct node *tempNode;
 
     tempNode = headNode;
 
-    if (headNode == NULL) {
+    if (headNode == NULL)
+    {
         printf("No nodes to display!");
         return;
     }
-    else {
+    else
+    {
         printf("\n");
-        while(tempNode != NULL) {
+        while (tempNode != NULL)
+        {
             printf("%d ", tempNode->data);
             tempNode = tempNode->next;
         }
     }
 }
 
-void insertBeg() {
+void insertBeg()
+{
     struct node *newNode;
-    newNode =(struct node*)malloc(sizeof(struct node));
+    newNode = (struct node *)malloc(sizeof(struct node));
     printf("\nEnter the data for the first node \n");
     scanf("%d", &newNode->data);
 
-    if(headNode==NULL)
-        headNode=newNode;
-    else {
-        newNode->next=headNode;
-        headNode=newNode;
+    if (headNode == NULL)
+        headNode = newNode;
+    else
+    {
+        newNode->next = headNode;
+        headNode = newNode;
     }
 }
 
-void insertEnd() {
+void insertEnd()
+{
     struct node *newNode, *tempNode;
     newNode = (struct node *)malloc(sizeof(struct node));
     printf("\nEnter data: ");
     scanf("%d", &newNode->data);
-    
+
     newNode->next = NULL; // Make sure the node entered is last node in ll
-    tempNode = headNode; // Use to traverse
-    
-    if (headNode == NULL) {
+    tempNode = headNode;  // Use to traverse
+
+    if (headNode == NULL)
+    {
         headNode = tempNode;
     }
 
-
-    while(tempNode->next != NULL) {
+    while (tempNode->next != NULL)
+    {
         tempNode = tempNode->next;
     }
     tempNode->next = newNode;
 }
 
-void deleteBeg() {
-    if (headNode == NULL) {
+void deleteBeg()
+{
+    if (headNode == NULL)
+    {
         printf("No nodes to delete!");
         return;
     }
     else
     {
-        headNode=headNode->next;
+        headNode = headNode->next;
     }
 }
 
-void deleteEnd() {
-    struct node *currNode,*nextNode;
-        currNode=nextNode=headNode;
-    if (headNode == NULL) {
+void deleteEnd()
+{
+    struct node *currNode, *nextNode;
+    currNode = nextNode = headNode;
+    if (headNode == NULL)
+    {
         printf("No nodes to delete!");
         return;
     }
-    else 
+    else
     {
-        while(nextNode->next!=NULL)
+        while (nextNode->next != NULL)
         {
-            currNode=nextNode;
-            nextNode=nextNode->next;
+            currNode = nextNode;
+            nextNode = nextNode->next;
         }
 
-        if(nextNode==headNode)
+        if (nextNode == headNode)
         {
-            headNode=NULL;
+            headNode = NULL;
         }
         else
         {
             currNode->next = NULL;
         }
     }
-
 }
