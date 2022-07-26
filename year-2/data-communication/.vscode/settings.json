@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "fstream": "cpp"
-    },
-    "cSpell.ignoreWords": [
-        "Backoff"
-    ]
-}
