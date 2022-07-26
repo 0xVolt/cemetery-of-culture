@@ -1,0 +1,62 @@
+N O T E S
+
+RECAP
+    Files are used for long term retention of data.
+    Stored in Secondary storage.
+    Data will be safe after system is restarted.
+    Remains there unless you take it out.
+    File may be created with 'w' mode and may be overwritten
+        Be mindful of which mode you open the file with
+    Types
+        Text files and Binary Files
+    Python sees Text files as a sequence of characters. Text files may not just be txt, they can be csv, tsv, etc.
+    Binary files are images, videos, etc. Py assumes it to be a sequence of bytes
+
+    open() with read 'r' or write 'w' ('r' by default)
+    write() for writing
+    create file object to iterate over file
+    iterate over the file object one by one using for loop
+    use readline() to read current line, use readlines() to read entire file as list of lines
+
+    seek(offset, whence) --> whence - reference point
+
+LECTURE 8-4-21
+with open('myfile.txt', 'w') as fout:
+    fout.write('1000 test1 30\n')
+    fout.write('1001 test2 31\n')
+    fout.write('1002 test3 32\n')
+
+automatically close file when control reaches end of with. myfile.txt is either created or overwritten depening on whether it exists or not
+
+with open(myfile.txt) as fin:
+    printf(f'{"ID" : < 10}{"Name" : < 10}{"Points" : > 10}')
+    for line in fin:
+        sapid, name, pts = line.split()
+        print(f'{sapid:<10}{name:<10}{pts:>10}')
+
+'<' --> left allign; 10 --> 10 cols space alloted; No space between brace; '>' --> right alligned
+
+HOW TO MODIFY A line
+    create new temp file
+    read and write all lines to temp
+    when come to line to modify, we change or delete or whatever
+    close files
+    delete old file, rename new file
+
+Whenever you have repeated code, use a function 
+
+
+
+EXCEPTIONS
+
+Problem that doesnt allow your code to execute further
+Unless you dont handle the exception yourself, the code will stop executing (terminate) and show you an error
+
+
+Exception occurs (raised)
+    Termiantes script and displays traceback --> stack copy
+
+What if we dont want a program to terminate or we want to handle the exception ourselves
+
+We use
+    try, use, raise, etc.

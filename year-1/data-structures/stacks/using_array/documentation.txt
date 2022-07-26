@@ -1,0 +1,49 @@
+A stack is a linear DS which follows a LIFO structure
+and has only one point of insertion and deletion
+
+The process of inserting an item into the stack is called 
+'pushing' an item to the stack
+
+When the stack is full, the condition is called
+'overflow'
+
+If a single element is needed to be deleted, the only item 
+available to delete (or 'pop') is the item at the top of the 
+stack
+
+Thus, the stack only has one point of insertion and deletion
+or all operations occur at the 'TOP'
+
+The initial value of -1, so when we insert an element, we increment
+TOP
+so, if TOP >= MAX - 1
+        overflow condition
+We check this condition before we push an element
+
+When we try to delete from an empty stack, we call that 
+an 'underflow' condition
+so, if TOP == -1
+        underflow condition
+
+when popping items, we check for the underflow cond, then we 
+do top-- if underflow is not met
+
+When we do top--, the number itself isnt deleted rather we give the computer permission to overwrite it
+
+if (top >= MAX - 1) {
+    OVERFLOW
+}
+else {
+    top++;
+    scanf("%d", &n);
+    stack[top] = n;
+}
+
+Function to traverse and display all the elements in the stack:
+void displayStack() {
+    int count = top;
+    while (count != -1) {
+        printf("%d ", stack[count]);
+        count--;
+    }
+}
