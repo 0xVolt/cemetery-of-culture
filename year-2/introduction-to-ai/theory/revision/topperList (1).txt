@@ -1,0 +1,6 @@
+SAP	Name	Semester	Subjects	Marks	Percentage
+500075059	Ona Yamanaka	3.0	5.0	484.0	96.8
+500031106	Lincoln Henriquez	4.0	5.0	418.0	83.6
+500069697	Landon Scurry	4.0	5.0	412.0	82.39999999999999
+500016673	Olin Tongue	3.0	5.0	409.0	81.8
+500089460	Wes Heitz	5.0	5.0	379.0	75.8

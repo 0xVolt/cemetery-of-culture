@@ -1,0 +1,9 @@
+to check if 0:
+    divide using arb num
+
+to check if negative:
+    trigger ArrayIndexOutOfBounds by placing arb num at that index
+
+to check if greater:
+    subtract
+    trigger ArrayIndexOutOfBounds
