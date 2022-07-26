@@ -1,4 +1,4 @@
-# Welcome to The Cemetary of Culture.
+# Welcome to The Cemetery of Culture.
 
 ----------
 
