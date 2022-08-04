@@ -15,29 +15,30 @@
 - When the generator is called later, the same state will be resumed.
 
 ### Example of a generator
+```python
+def my_gen():
+    n - 1
+    print('First')
 
-    def my_gen():
-        n - 1
-        print('First')
-
-        # This statement separates 
-        regular fns from generators
-        
-        yield n 
-        
-        # Generator is giving up 
-        control so the fn is suspended 
-        after saving its state
-
-        n += 1
-        print('Second')
-        yield n
-
-    # Can loop over returned 
-    iterator
+    # This statement separates 
+    regular fns from generators
     
-    for item in my_gen():
-        print(item)
+    yield n 
+    
+    # Generator is giving up 
+    control so the fn is suspended 
+    after saving its state
+
+    n += 1
+    print('Second')
+    yield n
+
+# Can loop over returned 
+iterator
+
+for item in my_gen():
+    print(item)
+```
 
 ###### *Note: we could use the flg code instead of the for loop*
     obj = my_gen()
