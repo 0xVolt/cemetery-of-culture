@@ -39,9 +39,9 @@ Updating the forked repo is just like updating any other repo on GitHub using Gi
 - Once you've added files into that folder, you need the changes made on your computer to reflect in the repo on GitHub. To do this, execute the following commands:
 
     1. `git add .`
-        - `git add` adds files to the staging area to be committed and then pushed, and the argument it takes is `.` which adds all the currently untracked files into your staging area.
+        - `git add` adds files to the tracked list to be committed and then pushed, and the argument it takes is `.` which adds all the currently untracked files into your staging area.
     2. `git commit -m "<your_commit_message_here>"`
-        - `git commit` tracks those files in the staging area as 'files to be committed' to the repo. The argument it takes is `-m` - which stands for message - and then the message that gives another collaborator information on what the files committed do.
+        - `git commit` adds those files in the staging area as 'files to be committed' to the repo. The argument it takes is `-m` - which stands for message - and then the message that gives another collaborator information on what the files committed do.
         - Its important to note that you cannot commit without a message. Its just best practice to give meaningful messages in your commits.
     3. `git push`
         - This pushes all the files which were tracked as committed files in the previous step and is the final step to push your files to GitHub for the world (or collaborators to see).
