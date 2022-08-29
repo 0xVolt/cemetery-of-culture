@@ -10,6 +10,7 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
+# Add the full path and not the relative. Should import then.
 with open("intents.json") as file:
     data = json.load(file)
 
