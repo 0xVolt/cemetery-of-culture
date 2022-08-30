@@ -1,6 +1,9 @@
 ## TODO - Experiment 1.a
+
 ---
+
 ### Preliminary
+
 - [ ] Finish documentation
 - [ ] Refactor variables
 - [ ] Clean up importing libraries
@@ -11,7 +14,9 @@
   - [ ] Explain the control electronics
   - [ ] Talk about domains of analysis
   - [ ] Transfer functions and the coefficient set
+
 ### Bonus
+
 - [ ] Control electronics in F1
 - [ ] Bode graphs of F1 data as a project case study or intelligent systems
-  - [ ] Telemetry as an intelligent study  
+  - [ ] Telemetry as an intelligent study
