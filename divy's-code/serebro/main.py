@@ -6,6 +6,7 @@ import tflearn
 from tensorflow.python.framework import ops
 import numpy
 from typing import List
+from isbntools.app import*
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
@@ -13,23 +14,6 @@ stemmer = LancasterStemmer()
 # Add the full path and not the relative. Should import then.
 with open("intents.json") as file:
     data = json.load(file)
-
-
-words = []
-labels = []
-docs_x = []
-docs_y = []
-
-for intent in data["intents"]:
-    for pattern in intent["patterns"]:
-        wrds = nltk.word_tokenize(pattern)
-        words.extend(wrds)
-        docs_x.append(wrds)
-        docs_y.append(intent["tag"])
-
-    if intent["tag"] not in labels:
-        labels.append(intent["tag"])
-
 try:
 
     with open("data.pickle", "rb") as f:
@@ -38,18 +22,9 @@ try:
 
 except:
 
-    words = [stemmer.stem(w.lower())for w in words if w != "?"]
-    words = sorted(list(set(words)))
-    labels = sorted(labels)
-    training = []
-    output = []
-
-    out_empty = [0 for _ in range(len(labels))]
+    out_empty = [0 for _ in range(len(labels))] 
 
     for x, doc in enumerate(docs_x):
-        bag = []
-        wrds = [stemmer.stem(w) for w in doc]
-
         for w in words:
             if w in wrds:
                 bag.append(1)
@@ -93,8 +68,16 @@ def bag_of_words(s, words):
 
     return numpy.array(bag)
 
-
 def chat():
+    sell=[]
+    borrow=[]
+    def switchIntents(tag):
+        for tg in data["intents"]:
+            if tg['tag']==tag:
+                                                                              
+                responses=tg['responses']
+                print(random.choice(responses))
+
     print("start talking with the bot!")
     while True:
         inp = input("you: ")
@@ -110,8 +93,51 @@ def chat():
             for tg in data["intents"]:
                 if tg['tag'] == tag:
                     responses = tg['responses']
+                    print(random.choice(responses))
 
-            print(random.choice(responses))
+            if tag=="help":
+                print("Enter your choice and get help from me :D")
+                n= int(input(""))
+                if n==1:
+                    tag="complaints"
+                    switchIntents(tag)
+                    
+                           
+                    f=int(input(""))
+                    if f==1:
+                        tag="Fraud"
+                        count=0
+                        switchIntents(tag)
+                            
+                    elif f==2:
+                        tag="transactional"
+                        switchIntents(tag)
+
+
+                    elif f==3:
+                        tag="BookList"
+                        switchIntents(tag)
+
+                elif n==2:
+                    print("Enter the ISBN number of the book")
+                    isbn=(input(""))
+                    print("The details of the book is ")
+                    try:
+                        print(registry.bibformatters['Author'](meta(isbn)))
+                        print("Is this the book you want to sell?  [y/n]")
+                        res=input("")
+                        if res=="y":
+                            print("The book will be queued to sell after you will upload the pictures of the book")
+
+
+                        
+                    except:
+                        print("Cannot Find the ISBN number hence cannot sell")
+                
+                #elif n==3:
+ 
+            else:
+                continue
         else:
             print("I didn't understand you, try again :D")
 
