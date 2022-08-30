@@ -1,4 +1,5 @@
 from typing import List
+from isbntools.app import*
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer= LancasterStemmer()
@@ -16,18 +17,18 @@ with open("intents.json") as file:
 
 words= []
 labels= []
-docs_x= []
-docs_y= []
+docs_x= [] # For every entry in docs_x we would have a corresponding mapping in docs_y
+docs_y= [] #for every entry in docs_y we would have a corresponding mapping in docs_x
 
 for intent in data["intents"]:
     for pattern in intent["patterns"]:
         wrds= nltk.word_tokenize(pattern)
-        words.extend(wrds)
-        docs_x.append(wrds)
-        docs_y.append(intent["tag"])
+        words.extend(wrds) #used to add a new entry or iterator at the end of the list
+        docs_x.append(wrds)#will add 'words' in the list 'docs_x'
+        docs_y.append(intent["tag"])# for every word in docs_x we would have a corresponding tag in docs_y
 
     if intent["tag"] not in labels:
-            labels.append(intent["tag"])
+            labels.append(intent["tag"]) #initialising all the tags into the list labels
     
 try:
     
@@ -39,16 +40,16 @@ try:
 except:
 
     words= [stemmer.stem(w.lower())for w in words if w != "?"]
-    words= sorted(list(set(words)))
-    labels = sorted(labels)
+    words= sorted(list(set(words))) #to remove duplicate syllables extracted from .word_tokenize function
+    labels = sorted(labels) #this will sort all the tags stored in labels 
     training= []
     output= []
 
-    out_empty = [0 for _ in range(len(labels))]
+    out_empty = [0 for _ in range(len(labels))] 
 
     for x, doc in enumerate(docs_x):
         bag=[]
-        wrds= [stemmer.stem(w) for w in doc]
+        wrds= [stemmer.stem(w) for w in doc] #we never stemmed wrds so we are doing it now
         
         for w in words:
             if w in wrds:
@@ -94,7 +95,18 @@ def bag_of_words(s,words):
 
     return numpy.array(bag)
 
+    
+
 def chat():
+    sell=[]
+    borrow=[]
+    def switchIntents(tag):
+        for tg in data["intents"]:
+            if tg['tag']==tag:
+                                                                              
+                responses=tg['responses']
+                print(random.choice(responses))
+
     print("start talking with the bot!")
     while True:
         inp= input("you: ")
@@ -110,8 +122,76 @@ def chat():
             for tg in data["intents"]:
                 if tg['tag']==tag:
                     responses = tg['responses']
+                    print(random.choice(responses))
 
-            print(random.choice(responses))
+            if tag=="help":
+                print("Enter your choice and get help from me :D")
+                n= int(input(""))
+                if n==1:
+                    tag="complaints"
+                    switchIntents(tag)
+                    
+                           
+                    f=int(input(""))
+                    if f==1:
+                        tag="Fraud"
+                        count=0
+                        switchIntents(tag)
+                            
+                    elif f==2:
+                        tag="transactional"
+                        switchIntents(tag)
+
+
+                    elif f==3:
+                        tag="BookList"
+                        switchIntents(tag)
+
+                elif n==2:
+                    print("Enter the ISBN number of the book")
+                    isbn=(input(""))
+                    print("The details of the book is ")
+                    try:
+                        print(registry.bibformatters['Author'](meta(isbn)))
+                        print("Is this the book you want to sell?  [y/n]")
+                        res=input("")
+                        if res=="y":
+                            print("The book will be queued to sell after you will upload the pictures of the book")
+
+
+                        
+                    except:
+                        print("Cannot Find the ISBN number hence cannot sell")
+                
+                #elif n==3:
+
+
+
+
+
+                
+                    
+                
+
+
+
+
+
+                                            
+                                        
+
+                            
+
+                                                           
+                
+                
+                    
+                        
+                
+                
+                
+            else:
+                continue
         else:
             print("I didn't understand you, try again :D")
 
