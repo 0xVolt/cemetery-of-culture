@@ -20,6 +20,7 @@ To that end, the ideal method to use this repository is to contribute code to it
 Here's a really effective cheat sheet to help understand flow of the git process of pushing code. 
 
 ![](./assets/git-cheat-sheet.png)
+*Note: Make sure when dealing with images and markdown files, always - and I mean **ALWAYS** - use relative paths that begin with `./`.*
 
 ###### What follows is the steps to successfully collaborate on a GitHub repo for any beginner to Git and GitHub.
 
