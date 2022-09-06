@@ -1,0 +1,4 @@
+year-3/neural-networks/2-eda-and-tensors/archive/ filter=lfs diff=lfs merge=lfs -text
+year-3/neural-networks/2-eda-and-tensors/archive/ratings_2018.csv filter=lfs diff=lfs merge=lfs -text
+year-3/neural-networks/2-eda-and-tensors/archive/ratings_2019.csv filter=lfs diff=lfs merge=lfs -text
+year-3/neural-networks/2-eda-and-tensors/archive/ratings_2020.csv filter=lfs diff=lfs merge=lfs -text

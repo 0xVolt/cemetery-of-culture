@@ -1,12 +1,10 @@
 # Welcome to The Cemetery of Culture.
 
-----------
-
 ## About this Repository
 ### Introduction
-This repository was created with the intention of keeping track of all the files that I create over the course of my B.Tech in Computer Science & Engg. in the specialisation of AI/ML. 
+This repository was created with the intention of keeping track of all the files that I create over the course of my B.Tech in Computer Science & Engg. in the specialisation of AI/ML.
 
-Contributors are most welcome to fork and create pull requests. The rest of the `readme` file will talk about how to get started forking the repo and making a pull request. 
+Contributors are most welcome to fork and create pull requests. The rest of the `readme` file will talk about how to get started forking the repo and making a pull request.
 
 ### Ideal use
 To make the most of this repository, keep in mind the aforementioned objective of this repo, namely, to improve everyone's version control skills and to become better programmers in a team.
@@ -56,7 +54,7 @@ Updating the forked repo is just like updating any other repo on GitHub using Gi
 ###### Note: If there are any errors in creating a pull request, read the next para to sync changes in the main repo with your forked one.
 
 ### Syncing your forked repo
-##### Its important to note that before you start working on your forked repo, you want to make sure that your forked repo is up-to-date and is in sync with the main repo. 
+##### Its important to note that before you start working on your forked repo, you want to make sure that your forked repo is up-to-date and is in sync with the main repo.
 This is so that you don't step on any toes when you make your changes or you don't make changes and make a PR to find that someone beat you to the punch. You do this by executing the following commands in your Git bash.
 
 ###### Pre-requisite step
@@ -66,6 +64,25 @@ This is so that you don't step on any toes when you make your changes or you don
 
 ###### Steps
 1. `git fetch upstream`
-2. `git merge upstream/main` or `git merge upstream/master` 
+2. `git merge upstream/main` or `git merge upstream/master`
+
+### Resetting commits
+- If the commit you want to get rid of was the last commit, and you have not done any additional work you can simply use git-reset
+
+       git reset HEAD^
+
+   Takes your branch back to the commit just before your current HEAD. However, it doesn't actually change the files in your working tree. As a result, the changes that were in that commit show up as modified - its like an 'un-commit' command. In fact, I have an alias to do just that.
+- Delete the most recent commit, without destroying the work you've done:
+
+        git reset --soft HEAD~1
+
+    Delete the most recent commit and remove changes:
+
+        git reset --hard HEAD~1
+
+- Change the value after `HEAD~` to revert to how many every commits previous. For example, if you need to revert 8 local commits, use
+
+        git reset --soft HEAD~11
+
 
 ------
