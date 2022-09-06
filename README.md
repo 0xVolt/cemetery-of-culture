@@ -19,7 +19,7 @@ To that end, the ideal method to use this repository is to contribute code to it
 ## Introduction to version control with Git - working with Git's CLI
 Here's a really effective cheat sheet to help understand flow of the git process of pushing code. 
 
-![](/cemetery-of-culture/assets/git-cheat-sheet.png)
+![](./assets/git-cheat-sheet.png)
 
 ###### What follows is the steps to successfully collaborate on a GitHub repo for any beginner to Git and GitHub.
 
