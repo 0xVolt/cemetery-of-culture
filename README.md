@@ -82,7 +82,7 @@ This is so that you don't step on any toes when you make your changes or you don
 
 - Change the value after `HEAD~` to revert to how many every commits previous. For example, if you need to revert 8 local commits, use
 
-        git reset --soft HEAD~11
+        git reset --soft HEAD~8
 
-
+- [Here](https://stackoverflow.com/questions/5097456/throw-away-local-commits-in-git) is an amazing source to learn about reverting local commits. Real lifesaver this one!
 ------
