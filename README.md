@@ -17,7 +17,7 @@ To that end, the ideal method to use this repository is to contribute code to it
 ----------
 
 ## Introduction to version control with Git - working with Git's CLI
-Here's a really effective cheat sheet to help understand flow of the git process of pushing code. 
+Here's a really effective cheat sheet to help understand flow of the git process of pushing code.
 
 ![](./assets/git-cheat-sheet.png)
 
