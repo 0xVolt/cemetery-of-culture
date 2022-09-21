@@ -1,4 +1,5 @@
 ## Checklist
+- [X] Edit code
 - [ ] Understand code
 - [ ] Write documentation
 - [ ] Understand multi-nominal models
