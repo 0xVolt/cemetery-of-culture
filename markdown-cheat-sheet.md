@@ -117,3 +117,5 @@ H~2~O
 ### Superscript
 
 X^2^ 
+This is a subscript <sub>test</sub>
+This is a superscript <sup>test</sup>
