@@ -14,3 +14,4 @@
 - [ ] **Explore data anaysis with tensors**
 
 ## Walk-through
+- [ ] Test with NeoVim
