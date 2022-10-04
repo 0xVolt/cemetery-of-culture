@@ -1,0 +1,1 @@
+Path where Keil software is installed along with the additional software installs - `C:\Keil_v5\C51\Examples\Hello\HELLO.C`.
