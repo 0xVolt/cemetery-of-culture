@@ -9,7 +9,7 @@ Each image is 28 pixels in height and 28 pixels in width, for a total of 784 pix
 
 The training data set, (train.csv), has 785 columns. The first column, called "label", is the digit that was drawn by the user. The rest of the columns contain the pixel-values of the associated image.
 
-Each pixel column in the training set has a name like pixelx, where x is an integer between 0 and 783, inclusive. To locate this pixel on the image, suppose that we have decomposed x as x = i * 28 + j, where i and j are integers between 0 and 27, inclusive. Then pixelx is located on row i and column j of a 28 x 28 matrix, (indexing by zero).
+Each pixel column in the training set has a name like pixel-x, where x is an integer between 0 and 783, inclusive. To locate this pixel on the image, suppose that we have decomposed x as x = i * 28 + j, where i and j are integers between 0 and 27, inclusive. Then pixel-x is located on row i and column j of a 28 x 28 matrix, (indexing by zero).
 
 For example, pixel31 indicates the pixel that is in the fourth column from the left, and the second row from the top, as in the ascii-diagram below.
 
@@ -33,3 +33,6 @@ Your submission file should be in the following format: For each of the 28000 im
     (27997 more lines)
 
 The evaluation metric for this contest is the categorization accuracy, or the proportion of test images that are correctly classified. For example, a categorization accuracy of 0.97 indicates that you have correctly classified all but 3% of the images.
+
+### TODO
+- [ ] Learn about how back-propagation is one of the most important algorithms of our time. 
