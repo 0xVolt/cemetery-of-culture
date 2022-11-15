@@ -32,14 +32,9 @@ test_dataset = torchvision.datasets.CIFAR10(root='./data',
                                             download=True)
 
 # Instantiate loader objects to facilitate processing
-train_loader = torch.utils.data.DataLoader(dataset=train_dataset,
-                                           batch_size=batch_size,
-                                           shuffle=True)
+train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
-
-test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
-                                          batch_size=batch_size,
-shuffle=True)
+test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
 
 # Creating a CNN class
 class ConvNeuralNet(nn.Module):
@@ -108,5 +103,4 @@ for epoch in range(num_epochs):
       loss.backward()
       optimizer.step()
 
-      print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch +
-                                                   1, num_epochs, loss.item()))
+      print('Epoch [{}/{}], Loss: {:.4f}'.format(epoch + 1, num_epochs, loss.item()))
