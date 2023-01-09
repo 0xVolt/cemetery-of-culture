@@ -72,6 +72,7 @@ class ConvNeuralNet(nn.Module):
         out = self.fc1(out)
         out = self.relu1(out)
         out = self.fc2(out)
+
         return out
 
 # Creating model
