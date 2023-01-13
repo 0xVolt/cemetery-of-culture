@@ -22,7 +22,7 @@ x, t = make_regression(100, 1, shuffle=True, bias=1, noise=0, random_state=5)
 printSummary('x', x)
 printSummary('t', t)
 
-# Plotting scatterplot
+# Plotting scatter plot
 plt.scatter(x, t)
 plt.show()
 
