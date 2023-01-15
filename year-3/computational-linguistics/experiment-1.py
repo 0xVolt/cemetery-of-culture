@@ -5,15 +5,14 @@
 # Create a pandas dataframe with student data, impute values and calculate the average of a feature.
 
 # Import necessary libraries.
-
-# %%
 import pandas as pd
 import numpy as np
 import random
 
-# Define the number of students (i.e., records) to generate data for. Then, generate two lists, one for height and another for weight, of those students.
+# Define the number of students (i.e., records) to generate data for.
 numberOfStudents = 1000
 
+# Generate two lists, one for height and another for weight, of those students
 listOfHeights = [random.randint(130, 200) for i in range(numberOfStudents)]
 listOfWeights = [random.randint(50, 150) for i in range(numberOfStudents)]
 
@@ -21,8 +20,8 @@ listOfWeights = [random.randint(50, 150) for i in range(numberOfStudents)]
 df = pd.DataFrame(data = {
         'Student ID': list(np.arange(1, numberOfStudents + 1)),
         'Student Weights (kgs)': listOfWeights,
-        'Student Heights (cms)': listOfHeights 
-    }   
+        'Student Heights (cms)': listOfHeights
+    }
 )
 
 # Set the index of the dataframe to be the 'Student ID' column.
