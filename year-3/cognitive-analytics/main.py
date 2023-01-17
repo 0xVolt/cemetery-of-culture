@@ -55,10 +55,10 @@ axs[2, 1].contour(X, Y, Z)
 axs[2, 1].set_title("Contour Plot")
 
 # 3D scatter plot
-x = np.random.normal(0, 1, 100)
-y = np.random.normal(0, 1, 100)
-z = np.random.normal(0, 1, 100)
-axs[2, 2].scatter3D(x, y, z)
-axs[2, 2].set_title("3D Scatter Plot")
+#x = np.random.normal(0, 1, 100)
+#y = np.random.normal(0, 1, 100)
+#z = np.random.normal(0, 1, 100)
+#axs[2, 2].scatter3D(x, y, z)
+#axs[2, 2].set_title("3D Scatter Plot")
 
-plt.show()
+#,,plt.show()
