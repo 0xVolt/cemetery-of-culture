@@ -65,7 +65,7 @@ count = 0
 for i in range(len(y_test)):
     if y_test[i] == predictedOutput[i]:
         count += 1
-        
+
 accuracy = (count / (testSampleSize)) * 100
 
 print(f'\nAccuracy: {accuracy:.3f}%')
