@@ -154,7 +154,7 @@ def calculateCases(zTable):
 # Main driver function
 def main():
     # Read the zTable from the csv file containing details of the zTable in comma separated format & set the first column as the index col
-    zTable = pd.read_csv(r"C:\Users\Volt\Code\B.Tech-CSE-Y2\applied-statistics\lab\experiment-5\zTable.txt", index_col=0)
+    zTable = pd.read_csv(r"/home/volt/code/cemetery-of-culture/year-2/applied-statistics/lab/experiment-5/zTable.xlsx", index_col=0)
 
     print("The generated z-Table is:\n", zTable)
 
