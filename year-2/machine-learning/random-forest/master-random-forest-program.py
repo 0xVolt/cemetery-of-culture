@@ -108,7 +108,7 @@ X_train,X_test,t_train,t_test=train_test_split(X,t,test_size=0.2,random_state=2)
 
 # %% Use RandomForestClassifier class. The most important parameter used is n_estimators. It determines the number of trees used in the Random Forest
 
-model = RandomForestClassifier(n_estimators=3, criterion="gini")
+model = RandomForestClassifier(n_estimators=3, criterion="entropy")
 model.fit(X_train,t_train)
 
 # The non-numerical equivalent of the new instance [0, 1, 1, 1] given is [‘g9’, ‘Y’, ‘==’, ‘G’]
