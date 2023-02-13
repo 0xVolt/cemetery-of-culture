@@ -1,10 +1,11 @@
 year-3/algorithms-for-intelligent-systems/cnn-classifier/data/
 
-year-3/computational-linguistics/experiment-3/twcs.csv
-year-3/computational-linguistics/experiment-3/tweet.csv
-year-3/computational-linguistics/experiment-3/tweets.csv
-year-3/computational-linguistics/experiment-4/tweets.csv
-year-3/computational-linguistics/experiment-4/processed-tweets.csv
+# Computatioal Linguistics data files
+year-3/computational-linguistics/experiment-3-extract-tweets/twcs.csv
+year-3/computational-linguistics/experiment-3-extract-tweets/tweet.csv
+year-3/computational-linguistics/experiment-3-extract-tweets/tweets.csv
+year-3/computational-linguistics/experiment-4-pre-process-tweets/tweets.csv
+year-3/computational-linguistics/experiment-4-pre-process-tweets/processed-tweets.csv
 
 year-3/cognitive-analytics/experiment-2/housing-data.csv
 
