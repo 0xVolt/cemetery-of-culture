@@ -1,1 +1,0 @@
-// 0 - 10, mul by 4 till 50 and print, then take input, then generate
