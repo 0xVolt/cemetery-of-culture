@@ -1,2 +1,0 @@
-## Bhaiya... advance. Badi.
----
