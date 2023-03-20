@@ -1,24 +1,22 @@
+from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score
-
+from sklearn.ensemble import RandomForestClassifier
 import pickle
 
-import pandas as pd
+# Load Iris data
+iris = load_iris()
 
-data = pd.read_csv('naive-bayes-classification-data.csv')
-print(data)
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(iris['data'], iris['target'], random_state=12)
 
-X_train, X_test, y_train, y_test = train_test_split(data[['glucose', 'bloodpressure']], data['diabetes'], test_size=0.3, random_state=42)
+# Train the model
+clf = RandomForestClassifier(random_state=12)
+clf.fit(X_train, y_train)
 
-print(f'X_Train shape: {X_train.shape}\ny_train shape: {y_train.shape}')
-
-classifier = GaussianNB()
-y_predicted = classifier.fit(X_train, y_train).predict(X_test)
-
-print("Number of mislabeled points out of a total %d points : %d" % (X_test.shape[0], (y_test != y_predicted).sum()))
-print("The resultant accuracy of the Gaussian Naive Bayes classifier is: %f" % accuracy_score(y_test, y_predicted))
+# Make prediction on the test set
+y_predict = clf.predict(X_test)
+print(y_predict)
 
 # Save model
 with open('model.pickle', 'wb') as f:
-    pickle.dump(classifier, f)
+    pickle.dump(clf, f)
