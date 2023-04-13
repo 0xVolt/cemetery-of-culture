@@ -1,10 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import warnings
-
 warnings.filterwarnings('ignore')
 
-numberSamples = 100
+numberSamples = 50
 
 deLinearise = lambda X: np.cos(1.5 * np.pi * X) + np.cos(5 * np.pi * X)
 
@@ -17,34 +16,48 @@ y = y.reshape(y.shape[0], 1)
 
 def main():
     tauList = np.arange(0, 1, step=0.2)
-    
-    predictionsList = []
+
+    predictionList = []
 
     for tau in tauList:
         XTest, predictions = getPredictionsForSingleTau(numberSamples, tau)
-        
-        predictionsList.append(predictions)
-        
-    predictionsList = np.array(predictionsList)
-    print(predictionsList.shape)
-        
-    
+        predictionList.append(predictions)
+
+    predictionList = np.array(predictionList)
+
+    plotPredictions(XTest, predictionList, tauList)
+
+
+def plotPredictions(XTest, predictionList, tauList):
+    plt.figure(figsize=(20, 15), dpi=80)
+
+    plt.plot(X, y, "o", color='orange', alpha=0.3, label='Training Data Points')
+
+    for i, prediction in enumerate(predictionList):
+        plt.plot(XTest, prediction, label=f'tau = {tauList[i]}')
+
+    plt.legend()
+    plt.show()
+
+
 def getPredictionsForSingleTau(numberPredictions, tau):
     XTest = np.sort(np.random.rand(numberPredictions)) * 2
 
     # Empty list for storing predictions.
     predictions = []
+    thetas = []
 
     # Predicting for all numberPredictions values and storing them in predictions.
     for point in XTest:
         theta, predicted = predict(X, y, point, tau)
         predictions.append(predicted)
+        thetas.append(theta)
 
     # Reshaping X_test and predictions
     XTest = np.array(XTest).reshape(numberPredictions, 1)
     predictions = np.array(predictions).reshape(numberPredictions, 1)
-    
-    return XTest, predictions
+
+    return XTest, predictions, thetas
 
 
 def predict(X, y, point, tau):
@@ -97,7 +110,7 @@ def calculateWeightMatrix(point, X, tau):
 
 if __name__ == "__main__":
     main()
-    
+
 
 # COPYPASTA HERE!
 
