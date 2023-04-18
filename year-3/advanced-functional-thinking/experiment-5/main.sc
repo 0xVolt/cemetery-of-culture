@@ -1,6 +1,6 @@
 object Main {
     def main(args: Array[String]): Unit = {
-        question8()
+        question9()
     }
 
     def question1() {
@@ -44,9 +44,12 @@ object Main {
 
     def question7() {
         val list = List(4, 7, 9)
-        def f(x:Int) = List(x*2, x, x*3)
-        val result1 = list.Map(y => f(y))
+
+        def f(x:Int) = List(x * 2, x, x * 3)
+
+        val result1 = list.map(y => f(y))
         println(result1)
+
         val result2 = list.flatMap(y => f(y))
         println(result2)
     }
@@ -59,17 +62,17 @@ object Main {
         println("Average="+ res._1/res._2.toFloat)
     }
 
-    // def question9() {
-    //     var a = 5
+    def question9() {
+        var a = 5
         
-    //     def fun() = {
-    //         a += 1;
-    //         a
-    //     }
+        def fun() = {
+            a += 1;
+            a
+        }
 
-    //     lazy val seq1 = Stream.continually( fun() )
-    //     (seq1 take 10) foreach {
-    //         x => println(x)
-    //     }
-    // }
+        lazy val seq1 = Stream.continually( fun() )
+        (seq1 take 10) foreach {
+            x => println(x)
+        }
+    }
 }
