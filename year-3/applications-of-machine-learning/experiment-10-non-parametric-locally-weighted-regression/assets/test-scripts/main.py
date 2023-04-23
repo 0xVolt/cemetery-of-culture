@@ -1,45 +1,38 @@
-# %% Import Libraries
-
 import numpy as np
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
-# %% Define global variables
+# Define global variables
+numberSamples = 500
 
-numberSamples = 250
+# Lambda function to de-linearize input function
+deLinearize = lambda X: np.cos(1.5 * np.pi * X) + np.cos(5 * np.pi * X)
 
-# %% Lambda function to de-linearise input function
-
-deLinearise = lambda X: np.cos(1.5 * np.pi * X) + np.cos(5 * np.pi * X)
-
-# %% Define X and y
-
+# Define X and y
 X = np.sort(np.random.rand(numberSamples)) * 2
-y = deLinearise(X) + np.random.randn(numberSamples) * 0.1
+y = deLinearize(X) + np.random.randn(numberSamples) * 0.1
 
 X = X.reshape(X.shape[0], 1)
 y = y.reshape(y.shape[0], 1)
 
-# %% Define tau
-
-tauList = np.arange(0, 0.2, step=0.05)
+# Define tau
+tauList = np.arange(0, 0.2, step=0.01)
 tauTest = 0.08
 
-# %% Function to calculate weight matrix
-
+# Function to calculate weight matrix
 def calculateWeightMatrix(point, X, tau):
     '''
     The parameters of this function are,
-		tau --> bandwidth
-		X --> Training data.
-		point --> the x where we want to make the prediction.
+    tau --> bandwidth
+    X --> Training data.
+    point --> the x where we want to make the prediction.
     '''
 
-    # m is the number of training examples .
+    # m is the number of training examples.
     m = X.shape[0]
 
-    # Initialising W as an identity matrix.
+    # Initializing W as an identity matrix.
     w = np.mat(np.eye(m))
 
     # Calculating weights for all training examples [x(i)'s].
@@ -50,9 +43,7 @@ def calculateWeightMatrix(point, X, tau):
 
     return w
 
-
-# %% Function to predict for a single point in the input vector
-
+# Function to predict for a single point in the input vector
 def predictSinglePoint(X, y, point, tau):
     # Calculating the weight matrix using the wm function we wrote earlier.
     w = calculateWeightMatrix(point, X, tau)
@@ -66,42 +57,44 @@ def predictSinglePoint(X, y, point, tau):
     # Returning the theta and predictions
     return theta, pointPrediction
 
-
-# %% Function to predict for a single tau value for all the points in the input vector
-
+# Function to predict for a single tau value for all the points in the input vector
 def predictSingleTau(XTest, tau):
     # Empty list for storing predictions.
     predictionForSingleTau = []
-    thetaForSingleTau = []
 
     # Predicting for all numberPredictions values and storing them in predictions.
     for point in XTest:
-        theta, pointPrediction = predictSinglePoint(X, y, point, tau)
+        _, pointPrediction = predictSinglePoint(X, y, point, tau)
         predictionForSingleTau.append(pointPrediction)
-        thetaForSingleTau.append(thetaForSingleTau)
 
     # Reshaping predictions
     predictionForSingleTau = np.array(predictionForSingleTau).reshape(numberSamples, 1)
 
-    return thetaForSingleTau, predictionForSingleTau
+    return predictionForSingleTau
 
+# Plot the training data
+plt.figure(figsize=(15, 10), dpi=80)
+plt.scatter(X, y, s=10, c='orange', marker='o', alpha=0.6)
+# plt.plot(X, y, c='orange', marker='o', alpha=0.6)
 
-# %% Plot the training data
-
-plt.figure(figsize=(20, 15), dpi=80)
-plt.plot(X, y, marker="o", color='orange', alpha=0.8, label='Training Data Points')
-
-# %% Define testing data to predict
-
+# Define testing data to predict
 XTest = np.sort(np.random.rand(numberSamples)) * 2
 XTest = np.array(XTest).reshape(numberSamples, 1)
 
-# %% Predict for a single tau value
+colorDelta = 0.3
 
-_, prediction = predictSingleTau(XTest, tauTest)
-plt.plot(XTest, prediction)
+# Predict for each tau value and plot
+for i, tau in enumerate(tauList):
+    prediction = predictSingleTau(XTest, tau)
+    
+    color = plt.cm.BuPu(colorDelta + (i / len(tauList)))
+    
+    plt.plot(XTest, prediction, color=color, alpha=0.4, label=f'tau={tau:.2f}')
 
-# %% Render plot
 
+# Set plot attributes
+plt.title("Locally Weighted Regression")
+plt.xlabel("X")
+plt.ylabel("y")
 plt.legend()
 plt.show()
