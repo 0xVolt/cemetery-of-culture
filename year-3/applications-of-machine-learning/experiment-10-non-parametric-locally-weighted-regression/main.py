@@ -4,7 +4,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Define global variables
-numberSamples = 500
+numberSamples = 100
 
 # Lambda function to de-linearize input function
 deLinearize = lambda X: np.cos(1.5 * np.pi * X) + np.cos(5 * np.pi * X)
@@ -17,7 +17,9 @@ X = X.reshape(X.shape[0], 1)
 y = y.reshape(y.shape[0], 1)
 
 # Define tau
-tauList = np.arange(0, 0.2, step=0.01)
+tauList = np.arange(0, 0.1, step=0.02)
+
+# Function to calculate weight matrix, step=0.)
 tauTest = 0.08
 
 # Function to calculate weight matrix
