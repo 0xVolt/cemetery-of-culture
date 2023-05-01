@@ -11,3 +11,5 @@ year-3/computational-linguistics/experiment-11-BERT/assets/
 year-3/computational-linguistics/project/assets/data/MIMIC-III/
 
 year-3/natural-language-processing/project/BERTTrainAndSave/
+year-3/natural-language-processing/project/assets/tensors/tensors.json
+year-3/natural-language-processing/project/assets/weights/weights.pt
