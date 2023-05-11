@@ -1,2 +1,5 @@
 import torch
-print(torch.cuda.is_available())
+
+print('Checking for GPU...')
+
+print(f'{torch.cuda.is_available()}')
