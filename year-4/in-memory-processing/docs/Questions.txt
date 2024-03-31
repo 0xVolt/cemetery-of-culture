@@ -1,0 +1,42 @@
+
+
+IndiaMaxTemp has following keywords
+
+Keywords:  ALLIN: All-INDIA, WHIND: WESTERN HIMALAYA OF INDIA, NWIND: NORTHWEST INDIA, NCIND: NORTH CENTRAL INDIA, NEIND: NORTHEAST INDIA, IPIND: INTERIOR PENINSULAR INDIA, ECIND: EASTCOAST OF INDIA, WCIND: WESTCOAST OF INDIA, 
+
+Fields Saperated by | and have fields(Region,Jan,Feb....Dec) avg minimum temperature of every month
+
+1. Filter all the line that does not contain valid temperature info (lines with region information)
+
+ALLIN1901N|22.6|24.6|30.6|34.6|36.2|35.7|32.1|30.2|31.4|31.6|28.0|24.8
+ALLIN|1901|22.6|24.6|30.6|34.6|36.2|35.7|32.1|30.2|31.4|31.6|28.0|24.8
+
+Spark code in Scala to achieve last step is
+
+scala> var region = tdata.filter(l=> !(l.contains("TEMPERATURE"))).map(l=> l.split('|')).map(l=> l(0)).map(l=>l.substring(0,5))
+
+scala> var year = tdata.filter(l=> !(l.contains("TEMPERATURE"))).map(l=> l.split('|')).map(l=> l(0)).map(l=>l.substring(5,9))
+
+
+scala> var tempr = tdata.filter(l=> !(l.contains("TEMPERATURE"))).map(l=>l.substring(11,l.length))
+
+scala> var joined = region.zip(year).zip(tempr)
+
+//p = ((region,year),tempr)
+//p._1 = (region,year)
+//p._1._1 = region
+//p._1._2 = year
+//p._2 = tempr
+
+scala> var join1 = joined.map(p => p._1._1+"|"+p._1._2+"|"+p._2)
+
+
+
+
+Use spark to solve the following questions.
+
+Q1. To find max temp of January in 107 years.
+
+Q2. Find max temp of January for All india region.
+
+Q3. find the year when January was the Hottest.
