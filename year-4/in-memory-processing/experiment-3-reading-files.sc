@@ -1,10 +1,10 @@
-import org.apache.spark.{ SparkSession, SparkContext }
+import org.apache.spark.{ SparkConf, SparkContext }
 
-val conf = new SparkConf().setAppName('ReadTextFileIntoRDD').setMaster('local')
+val conf = new SparkConf().setAppName("ReadTextFileIntoRD").setMaster("local")
 val sc = new SparkContext(conf)
 
 // Read text file into RDD
-rdd = sc.textFile('./docs/IndiaMaxTemp')
+val rdd = sc.textFile("./docs/IndiaMaxTemp")
 
 val lineCount = rdd.count()
 
