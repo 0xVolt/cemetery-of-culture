@@ -1,18 +1,35 @@
-import org.apache.spark.{ SparkConf, SparkContext }
+import org.apache.spark.{SparkConf, SparkContext}
 
-val conf = new SparkConf().setAppName("ReadTextFileIntoRD").setMaster("local")
-val sc = new SparkContext(conf)
+object Main {
+    def main(args: Array[String]): Unit = {
+        val conf = new SparkConf().setAppName("ReadTextFileIntoRD").setMaster("local")
+        val spark = new SparkContext(conf)
+    
+        val tData = spark.textFile("./docs/IndiaMaxTemp.txt")
 
-val temperatureData = sc.textFile("./docs/IndiaMaxTemp.txt")
+        tData.collect().foreach(println)
 
-temperatureData.collect().foreach(println)
+        val januaryMaxTemp = try {
+            val filteredRDD = tData
+                .filter(line => !line.contains("Keywords"))
+                .map(_.split("\\|"))
+                .filter(fields => fields.length == 14)
+                .map(fields => fields(1).toFloat)
+            
+            if (filteredRDD.isEmpty()) {
+                println("No temperature data found.")
+                Float.NaN // or any default value you prefer
+            } else {
+                filteredRDD.max()
+            }
+        } catch {
+            case e: Exception =>
+                println(s"An error occurred: ${e.getMessage}")
+                Float.NaN // or any default value you prefer
+        }
 
-val lineCount = temperatureData.count()
-println(s"Number of lines in the RDD: $lineCount")
+        println(s"Max temperature of January in 107 years: $januaryMaxTemp")
 
-// Answer to question 1
-val januaryMaxTemp = temperatureData.filter(line => !line.contains("Keywords")).map(_.split("\\|")).filter(fields => fields.length == 14).map(fields => fields(1).toFloat).max()
-
-println(s"Max temperature of January in 107 years: $januaryMaxTemp")
-
-sc.stop()
+        spark.stop()
+    }
+}
