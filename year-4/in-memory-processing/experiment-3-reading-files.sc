@@ -102,7 +102,7 @@ object Main {
 
         // question2(spark, tData)
 
-        // question3(spark, tData)
+        question3(spark, tData)
 
         spark.stop()
     }
