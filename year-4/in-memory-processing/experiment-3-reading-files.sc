@@ -19,19 +19,23 @@ object Main {
         joined
     }
 
-    def question1(spark: SparkSession): Unit = {
+    def importAndCleanRDD(spark: SparkSession): RDD[String] = {
         val tData = spark.sparkContext.textFile("./docs/IndiaMaxTemp.txt")
 
-        println("Printing the imported RDD:\n")
-        tData.collect().foreach(println)
+        // println("Printing the imported RDD:\n")
+        // tData.collect().foreach(println)
 
         val tDataCleaned = cleanRDD(tData)
 
         println("\n\nPre-processed RDD:\n")
         tDataCleaned.collect().foreach(println)
 
+        tDataCleaned
+    }
+
+    def question1(spark: SparkSession, tData: RDD[String]): Unit = {
         val januaryMaxTemp: Int = try {
-            val filteredRDD = tDataCleaned
+            val filteredRDD = tData
                 .filter(line => !line.contains("Keywords"))
                 .map(_.split("\\|"))
                 .filter(fields => fields.length == 14)
@@ -52,13 +56,26 @@ object Main {
         println(s"\nThe year in which the temperature of January was maximum in 107 years: $januaryMaxTemp")
     }
 
+    def question2(spark: SparkSession, tData: RDD[String]): Unit = {
+        val januaryData = tData.filter(line => line.split("\\|")(1).endsWith("01"))
+        val temperatures = januaryData.map(line => line.split("\\|").drop(2).map(_.toDouble))
+        val flatTemperatures = temperatures.flatMap(array => array)
+        val maxTemperature = flatTemperatures.max()
+
+        println(s"Maximum temperature of January for All India region: $maxTemperature °C")
+    }
+
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession.builder()
             .appName("ReadTextFileIntoRDD")
             .master("local[1]") // Set master URL appropriately
             .getOrCreate()
 
-        question1(spark)
+        val tData = importAndCleanRDD(spark)
+
+        // question1(spark, tData)
+
+        question2(spark, tData)
 
         spark.stop()
     }
