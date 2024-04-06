@@ -27,8 +27,8 @@ object Main {
 
         val tDataCleaned = cleanRDD(tData)
 
-        println("\n\nPre-processed RDD:\n")
-        tDataCleaned.collect().foreach(println)
+        // println("\n\nPre-processed RDD:\n")
+        // tDataCleaned.collect().foreach(println)
 
         tDataCleaned
     }
@@ -65,6 +65,31 @@ object Main {
         println(s"Maximum temperature of January for All India region: $maxTemperature °C")
     }
 
+    def question3(spark: SparkSession, tData: RDD[String]): Unit = {
+        // Filtering data for region "ALLIN"
+        val allIndiaData = tData.filter(line => line.startsWith("ALLIN"))
+
+        // Printing the filtered data
+        allIndiaData.collect().foreach(println)
+
+        // Split each line by "|", parse the year and temperature values
+        val parsedDataRDD = allIndiaData.map(line => {
+            val fields = line.split("\\|")
+            val year = fields(1).toInt
+            val temperature = fields(2).toDouble
+            (year, temperature)
+        })
+
+        // Find the record with the maximum temperature in the first month
+        val maxTemperatureRecord = parsedDataRDD.max()(Ordering[Double].on(_._2))
+
+        // Extract the year from the record
+        val yearWithMaxTemperature = maxTemperatureRecord._1
+
+        // Print the year with the maximum temperature in the first month
+        println(s"\n\nThe year with the hottest first month is: $yearWithMaxTemperature")
+    }
+
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession.builder()
             .appName("ReadTextFileIntoRDD")
@@ -75,7 +100,9 @@ object Main {
 
         // question1(spark, tData)
 
-        question2(spark, tData)
+        // question2(spark, tData)
+
+        // question3(spark, tData)
 
         spark.stop()
     }
