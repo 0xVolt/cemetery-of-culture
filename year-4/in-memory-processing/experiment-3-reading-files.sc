@@ -7,7 +7,7 @@ object Main {
     def cleanRDD(rdd: RDD[String]): RDD[String] = {
         // Step 1: Filter out lines that do not contain valid temperature info
         val filteredData = rdd.filter(!_.contains("TEMPERATURE"))
-        
+
         // Step 2: Extract region, year, and temperature information
         val region = filteredData.map(_.split('|')).map(_(0).substring(0, 5))
         val year = filteredData.map(_.split('|')).map(_(0).substring(5, 9))
@@ -15,7 +15,7 @@ object Main {
 
         // Step 3: Combine region, year, and temperature into a single RDD
         val joined = region.zip(year).zip(tempr).map { case ((reg, yr), tmp) => s"$reg|$yr|$tmp" }
-        
+
         joined
     }
 
@@ -40,7 +40,7 @@ object Main {
                 .map(_.split("\\|"))
                 .filter(fields => fields.length == 14)
                 .map(fields => fields(1).toFloat)
-            
+
             if (filteredRDD.isEmpty()) {
                 println("No temperature data found.")
                 Float.NaN.toInt
