@@ -13,7 +13,7 @@ To make the most of this repository, keep in mind the aforementioned objective o
 To that end, the ideal method to use this repository is to contribute code to it on a daily basis by issuing pull requests from each forked repository. This will assist us in adhering to a collaborative file structure and, in the end, will provide us with the skills required to objectively take notes and/or critique a peer's code.
 
 ### Note to the contributors
-Though everyone is a contributor, to maintain a uniform quality and file structure among the various sub-directories we have in this repo, please wait for the PRs to be accepted only by @0xVolt.
+> Though everyone is a contributor, to maintain a uniform quality and file structure among the various sub-directories we have in this repo, please wait for the PRs to be accepted only by @0xVolt.
 
 ----------
 
