@@ -24,7 +24,7 @@ Here's a really effective cheat sheet to help understand flow of the git process
 
 *Note: Make sure when dealing with images and markdown files, always - and I mean **ALWAYS** - use relative paths that begin with `./`.*
 
-###### What follows is the steps to successfully collaborate on a GitHub repo for any beginner to Git and GitHub.
+###### Note: What follows is the steps to successfully collaborate on a GitHub repo for any beginner to Git and GitHub.
 
 ## How to contribute?
 ### Forking the repo
