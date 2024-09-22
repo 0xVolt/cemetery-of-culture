@@ -64,7 +64,7 @@ Updating the forked repo is just like updating any other repo on GitHub using Gi
 This is so that you don't step on any toes when you make your changes or you don't make changes and make a PR to find that someone beat you to the punch. You do this by executing the following commands in your Git bash.
 
 ###### Pre-requisite step
-- `git remote add upstream <parent_github_repo_link>`
+- `git remote add upstream <parent_github_repository_link>`
     - You get the parent link the same way you got your forked repo link when you cloned it, except you do it on the main/parent repos site.
     - This step is only a one time thing to make sure that you sync your repo w.r.t to the desired repo.
 
