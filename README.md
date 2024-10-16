@@ -1,4 +1,4 @@
-# Welcome to the Cemetery of Culture.
+# Welcome to the Cemetery of Culture
 
 ## About this Repository
 
