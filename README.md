@@ -3,7 +3,7 @@
 ## About this Repository
 
 ### Introduction
-This repository was created with the intention of keeping track of all the files that I create over the course of my B.Tech in Computer Science & Engg. specialising in AI/ML.
+This repository was created with the intention of keeping track of all the files that I create over the course of my undergraduate studies B.Tech in Computer Science & Engg. specialising in AI/ML.
 
 Contributors are most welcome to fork and create pull requests. The rest of the `README.md` file will talk about how to get started forking the repo and making a pull request.
 
