@@ -7,11 +7,6 @@ This repository was created with the intention of keeping track of all the files
 
 Contributors are most welcome to fork and create pull requests. The rest of the `README.md` file will talk about how to get started forking the repo and making a pull request.
 
-### Ideal use
-To make the most of this repository, keep in mind the aforementioned objective of this repo, namely, to improve everyone's version control skills and to become better programmers in a team.
-
-To that end, the ideal method to use this repository is to contribute code to it on a daily basis by issuing pull requests from each forked repository. This will assist us in adhering to a collaborative file structure and, in the end, will provide us with the skills required to objectively take notes and/or critique a peer's code.
-
 ### Note to the contributors
 > Though everyone is a contributor, to maintain a uniform quality and file structure among the various sub-directories we have in this repo, please wait for the PRs to be accepted only by @0xVolt.
 
